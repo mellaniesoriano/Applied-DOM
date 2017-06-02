@@ -34,7 +34,7 @@
    function setMyLightClass (event, desiredClass) {
     var lightId = this.dataset.lightId;
     var targetElm = document.getElementById(lightId);
-    targetElm.className = 'desiredClass';
+    targetElm.className = desiredClass;
    }
 
 
@@ -70,7 +70,9 @@
    * to set the context to the correct object (the current context)
    */
 
-   btn1.addEventListener( 'click', function () { setMyLightGreen.apply(btn1); } );
+   btn1.addEventListener( 'click', function () {
+    setMyLightGreen.apply(btn1);
+  } );
 
 
   /*
@@ -82,7 +84,9 @@
    * to set the context to the correct object
    */
 
-   btn2.addEventListener('click', () => { setMyLightGreen.apply(btn2); });
+   btn2.addEventListener('click', () => {
+    setMyLightGreen.apply(btn2);
+  });
 
 
   /*
@@ -104,7 +108,9 @@
    *   and passing two aditional arguments, event and 'light-green'
    */
 
-   btn4.addEventListener('click', setMyLightClass.apply(btn4, event, 'light-green'));
+   btn4.addEventListener('click', function(event) {
+    setMyLightClass.apply(btn4, [event, 'light-green']);
+   });
 
 
   /*
