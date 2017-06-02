@@ -258,7 +258,7 @@
 
    btn12.addEventListener('click', function(event) {
     setLight12Class(event, 'light-green');
-   })
+   });
 
 
   /*
@@ -274,6 +274,10 @@
    *   invoke this function expression passing 2 arguments
    *     event, 'light-green'
    */
+
+   btn13.addEventListener('click', function(event) {
+    setMyLightClass.bind(this) (event, 'light-green');
+   });
 
 
   /*
